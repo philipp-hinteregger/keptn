@@ -148,7 +148,7 @@ jobs:
 
     - name: Install libgit2 for resource-service
       if: matrix.artifacts == 'resource-service'
-      run: apt install libgit2-dev -y
+      run: sudo apt install libgit2-dev -y
 
     - name: Check for vulnerabilities
       working-directory: ./${{ matrix.artifacts }}
