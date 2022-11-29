@@ -128,7 +128,6 @@ jobs:
        - "lighthouse-service"
        - "mongodb-datastore"
        - "remediation-service"
-       - "resource-service"
        - "secret-service"
        - "shipyard-controller"
        - "statistics-service"
@@ -145,11 +144,6 @@ jobs:
       
     - name: Install govulncheck
       run: go install golang.org/x/vuln/cmd/govulncheck@latest
-
-    - name: Install libgit2 for resource-service
-      if: matrix.artifacts == 'resource-service'
-      working-directory: ./${{ matrix.artifacts }}
-      run: sudo apt-get update && sudo apt install libgit2-dev
 
     - name: Check for vulnerabilities
       working-directory: ./${{ matrix.artifacts }}
