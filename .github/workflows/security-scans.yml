@@ -149,7 +149,7 @@ jobs:
     - name: Install libgit2 for resource-service
       if: matrix.artifacts == 'resource-service'
       working-directory: ./${{ matrix.artifacts }}
-      run: sudo apt install git2go -y && go mod tidy
+      run: sudo apt-get update && sudo apt install git2go -y && go mod tidy
 
     - name: Check for vulnerabilities
       working-directory: ./${{ matrix.artifacts }}
